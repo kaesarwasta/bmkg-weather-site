@@ -9,12 +9,12 @@
 </head>
 <body>
   <header class="navbar container">
-    <div class="logo">Kaesarweather</div>
+    <div class="logo">KaesarWeather</div>
     <nav>
-      <a href="index.html" class="active">Rumah</a>
-      <a href="forecast.html">Pemberitahuan</a>
-      <a href="cities.html">Kota</a>
-      <a href="settings.html">Pengaturan</a>
+      <a href="#" class="active">Rumah</a>
+      <a href="#">Pemberitahuan</a>
+      <a href="#">Kota</a>
+      <a href="#">Pengaturan</a>
     </nav>
   </header>
 
@@ -22,9 +22,44 @@
     <div class="overlay">
       <h2>Welcome to KaesarWeather</h2>
       <p>Pemberitahuan cuaca akurat di backing BMKG nih boss!!.</p>
-      <a href="forecast.html" class="btn primary">Lihat Pemberitahuan</a>
+      <a href="#" class="btn primary">Lihat Pemberitahuan</a>
     </div>
   </section>
+
+  <main>
+    <form>
+        <input type="text" id="name" autocomplete="off" placeholder="Cari kota...">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+    <section class="result">
+        <figure class="name">
+            <figcaption>London</figcaption>
+            <img src="https://flagsapi.com/GB/shiny/32.png">
+        </figure>
+        <figure class="temperature">
+            <img src="https://openweathermap.org/img/wn/10d@4x.png">
+            <figcaption><span>31</span><sup>o</sup></figcaption>
+        </figure>
+        <p class="description">overcast clouds</p>
+        <ul>
+            <li>
+                <span>clouds</span>
+                <i class="fa-solid fa-cloud"></i>
+                <span id="clouds">98</span>%
+            </li>
+            <li>
+                <span>humidity</span>
+                <i class="fa-solid fa-droplet"></i>
+                <span id="humidity">98</span>%
+            </li>
+            <li>
+                <span>pressure</span>
+                <i class="fa-solid fa-gauge"></i>
+                <span id="pressure">1011</span>hPa
+            </li>
+        </ul>
+    </section>
+  </main>
 
   <section class="features">
     <h3>Mengapa Memilih Kami?</h3>
@@ -35,11 +70,11 @@
       </div>
       <div class="card">
         <h4>Trusted Data</h4>
-        <p>Dibantu oleh BMKG, sumber akurat dan terpecaya.</p>
+        <p>Dibantu oleh BMKG, sumber akurat dan terpercaya.</p>
       </div>
       <div class="card">
         <h4>Mobile Friendly</h4>
-        <p>Akses dimana saja, Kapan saja.</p>
+        <p>Akses dimana saja, kapan saja.</p>
       </div>
     </div>
   </section>
@@ -49,7 +84,7 @@
     <ul>
       <li>Selalu membawa payung saat musim hujan.</li>
       <li>Selalu terhidrasi, membawa minum saat cuaca panas.</li>
-      <li>Selalu mengamankan barang barang ketika badai.</li>
+      <li>Selalu mengamankan barang-barang ketika badai.</li>
     </ul>
   </section>
 
@@ -57,18 +92,18 @@
     <h3>Feedbacks</h3>
     <div class="cards">
       <div class="card">
-        <p>Akurat dan mudah digunakan, sangat membantu planning gw buat liburan musim pana!”</p>
+        <p>Akurat dan mudah digunakan, sangat membantu planning gw buat liburan musim panas!</p>
         <strong>- Dinda, Jakarta</strong>
       </div>
       <div class="card">
-        <p>“Aplikasi/web yang harus orang punya untuk selalu update pemberitahuan cuaca.”</p>
+        <p>Aplikasi/web yang harus orang punya untuk selalu update pemberitahuan cuaca.</p>
         <strong>- Dede, Sunda</strong>
       </div>
     </div>
   </section>
 
   <footer class="footer">
-    &copy; 2025 KAesarWeather All rights reserved.
+    &copy; 2025 KaesarWeather All rights reserved.
   </footer>
 </body>
 </html>
