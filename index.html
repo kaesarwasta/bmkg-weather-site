@@ -3,53 +3,96 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BMKG Weather App</title>
+  <title>WeatherWorld – Forecast Luxury</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="weather-container">
-    <div class="top-section">
-      <img src="https://img.icons8.com/emoji/96/rain-cloud.png" alt="Weather Icon" class="weather-icon"/>
-      <h1 class="temperature">19°</h1>
-      <p class="description">Precipitations</p>
-      <p class="temp-range">Max: 24° Min: 18°</p>
-      <img src="https://img.icons8.com/color/96/house.png" alt="House" class="house-icon"/>
+  <header class="navbar">
+    <div class="container">
+      <h1 class="logo">WeatherWorld</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Forecast</a>
+        <a href="#">Cities</a>
+        <a href="#">Settings</a>
+        <a href="#" class="btn">Login</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="forecast-section">
-      <div class="forecast-header">
-        <span>Today</span>
-        <span>July, 21</span>
-      </div>
-      <div class="forecast-row">
-        <div class="forecast-card">
-          <p>19°C</p>
-          <img src="https://img.icons8.com/emoji/48/rain-cloud.png" alt="Rain" />
-          <p>15.00</p>
-        </div>
-        <div class="forecast-card">
-          <p>18°C</p>
-          <img src="https://img.icons8.com/emoji/48/cloud-with-rain.png" alt="Rain" />
-          <p>16.00</p>
-        </div>
-        <div class="forecast-card">
-          <p>18°C</p>
-          <img src="https://img.icons8.com/emoji/48/cloud-with-rain.png" alt="Rain" />
-          <p>17.00</p>
-        </div>
-        <div class="forecast-card">
-          <p>18°C</p>
-          <img src="https://img.icons8.com/emoji/48/cloud-with-rain.png" alt="Rain" />
-          <p>18.00</p>
-        </div>
-      </div>
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Live Weather Forecast</h2>
+      <p>Discover the forecast in your favorite cities – with elegance and simplicity.</p>
+      <a href="#" class="btn primary">Check Weather</a>
     </div>
+  </section>
 
-    <div class="bottom-nav">
-      <button class="nav-button">📍</button>
-      <button class="nav-button add">＋</button>
-      <button class="nav-button">≡</button>
+  <section class="highlights">
+    <div class="container">
+      <h3>Today's Highlights</h3>
+      <div class="cards">
+        <div class="card">
+          <h4>Jakarta</h4>
+          <p>🌧️ Rain - 28°C</p>
+        </div>
+        <div class="card">
+          <h4>Bandung</h4>
+          <p>⛅ Cloudy - 23°C</p>
+        </div>
+        <div class="card">
+          <h4>Surabaya</h4>
+          <p>☀️ Sunny - 31°C</p>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <section class="features">
+    <div class="container split">
+      <div>
+        <h3>5-Day Forecast</h3>
+        <p>Explore the next few days. Perfect for planning events or weekend trips.</p>
+      </div>
+      <div class="forecast-grid">
+        <div class="day">
+          <p>Friday</p><span>🌦️ 29°C</span>
+        </div>
+        <div class="day">
+          <p>Saturday</p><span>☀️ 31°C</span>
+        </div>
+        <div class="day">
+          <p>Sunday</p><span>🌧️ 27°C</span>
+        </div>
+        <div class="day">
+          <p>Monday</p><span>⛅ 28°C</span>
+        </div>
+        <div class="day">
+          <p>Tuesday</p><span>☀️ 30°C</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="partners">
+    <div class="container">
+      <h3>Data from</h3>
+      <div class="partner-logos">
+        <img src="https://cdn.bmkg.go.id/web/logo-bmkg.png" alt="BMKG">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Weather_icon_-_sun_and_cloud.svg" alt="SunCloud" />
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 WeatherWorld. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Contact</a>
+        <a href="#">Privacy</a>
+        <a href="#">GitHub</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
