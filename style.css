@@ -1,84 +1,128 @@
-body, html {
+body {
   margin: 0;
-  padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f4f4f4;
+  background: #f4f4f4;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
 }
 
 .navbar {
-  background-color: #1e1e2f;
-  padding: 1rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  background: #005f73;
   color: white;
+  padding: 1rem;
+}
+
+.navbar .logo {
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
 .navbar nav a {
-  color: #fff;
+  color: white;
   margin-left: 1rem;
   text-decoration: none;
 }
 
 .navbar nav a.active {
-  font-weight: bold;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #ffba08;
 }
 
 .hero {
-  height: 80vh;
+  height: 60vh;
   background-size: cover;
   background-position: center;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
 }
 
 .hero .overlay {
   background: rgba(0, 0, 0, 0.5);
+  color: white;
   padding: 2rem;
-  color: #fff;
   text-align: center;
-  border-radius: 10px;
 }
 
 .btn.primary {
-  background-color: #007bff;
-  color: white;
-  padding: 0.75rem 1.5rem;
+  background: #ffba08;
+  color: black;
+  padding: 0.5rem 1rem;
   text-decoration: none;
   border-radius: 5px;
-  display: inline-block;
   margin-top: 1rem;
+  display: inline-block;
+}
+
+form {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+form input {
+  padding: 0.5rem;
+  width: 200px;
+}
+
+form button {
+  padding: 0.5rem;
+  background: #005f73;
+  color: white;
+  border: none;
+}
+
+.result {
+  text-align: center;
+  background: white;
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.result img {
+  width: 80px;
+}
+
+.result ul {
+  list-style: none;
+  padding: 0;
+}
+
+.result ul li {
+  display: inline-block;
+  margin: 0 10px;
 }
 
 .features, .tips, .testimonials {
   padding: 2rem;
-  background-color: #fff;
-  margin-top: 1rem;
+  background: white;
+  margin: 2rem 0;
 }
 
-.features .cards,
-.testimonials .cards {
+.features .cards, .testimonials .cards {
   display: flex;
   gap: 1rem;
-  margin-top: 1rem;
-  flex-wrap: wrap;
 }
 
 .card {
-  background-color: #f8f9fa;
+  background: #edf6f9;
   padding: 1rem;
   border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   flex: 1;
-  min-width: 200px;
 }
 
 .footer {
+  background: #005f73;
+  color: white;
   text-align: center;
   padding: 1rem;
-  background-color: #1e1e2f;
-  color: white;
-  margin-top: 2rem;
 }
