@@ -1,37 +1,72 @@
-<!-- index.html (Landing Page) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KaesarWeather – Rumah</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App - Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
 </head>
 <body>
-  <header class="navbar">
-    <div class="container">
-      <h1 class="logo">Wasta - Cuaca</h1>
-      <nav>
-        <a href="index.html">Rumah</a>
-        <a href="forecast.html">Cuaca</a>
-        <a href="cities.html">Kota</a>
-        <a href="settings.html">Pengaturan</a>
-      </nav>
-    </div>
+  <header class="navbar container">
+    <div class="logo">WeatherApp</div>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="forecast.html">Forecast</a>
+      <a href="cities.html">Cities</a>
+      <a href="settings.html">Settings</a>
+    </nav>
   </header>
 
   <section class="hero">
-    <div class="hero-content">
-      <h2>Pemberitahuan cuaca</h2>
-      <p>Ketahuilah Cuaca sekitar di daerah mu dengan Elegansi ~Dede 1945</p>
-      <a href="forecast.html" class="btn primary">Mulai</a>
+    <h2>Welcome to WeatherApp</h2>
+    <p>Check accurate and up-to-date forecasts powered by BMKG.</p>
+    <a href="forecast.html" class="btn primary">View Forecast</a>
+  </section>
+
+  <section class="features">
+    <h3>Why Choose Us?</h3>
+    <div class="cards">
+      <div class="card">
+        <h4>Real-time Updates</h4>
+        <p>Stay updated with the latest weather alerts and forecasts.</p>
+      </div>
+      <div class="card">
+        <h4>Trusted Data</h4>
+        <p>Powered by BMKG, ensuring reliable and official information.</p>
+      </div>
+      <div class="card">
+        <h4>Mobile Friendly</h4>
+        <p>Accessible on any device, anytime and anywhere.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tips">
+    <h3>Weather Safety Tips</h3>
+    <ul>
+      <li>Always carry an umbrella during rainy seasons.</li>
+      <li>Stay hydrated and wear sunscreen in hot weather.</li>
+      <li>Secure loose objects before a storm.</li>
+    </ul>
+  </section>
+
+  <section class="testimonials">
+    <h3>What Users Say</h3>
+    <div class="cards">
+      <div class="card">
+        <p>“Accurate and easy to use. Helped me plan my holiday!”</p>
+        <strong>- Dinda, Jakarta</strong>
+      </div>
+      <div class="card">
+        <p>“A must-have app for anyone who wants reliable forecasts.”</p>
+        <strong>- Reza, Bandung</strong>
+      </div>
     </div>
   </section>
 
   <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 KaesarWasta. All rights reserved.</p>
-    </div>
+    &copy; 2025 WeatherApp. All rights reserved.
   </footer>
 </body>
 </html>
