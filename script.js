@@ -1,21 +1,29 @@
 async function getWeather() {
-  const city = document.getElementById("cityInput").value;
-  const province = document.getElementById("province").value;
+      const city = document.getElementById('citySelector').value;
+      const loading = document.getElementById('loading');
+      const card = document.getElementById('weatherCard');
+      const cityName = document.getElementById('cityName');
+      const weatherInfo = document.getElementById('weatherInfo');
 
-  const res = await fetch(`https://YOUR_RENDER_URL.onrender.com/weather?city=${encodeURIComponent(city)}&province=${encodeURIComponent(province)}`);
-  const data = await res.json();
+      loading.style.display = 'block';
+      card.style.display = 'none';
+try {
+        const response = await fetch(`https://your-flask-backend-url.com/api/weather?city=${city}`);
+        const data = await response.json();
 
-  const result = document.getElementById("result");
-  if (data.error) {
-    result.innerHTML = `<p style="color:red;">${data.error}</p>`;
-    return;
-  }
+        cityName.textContent = city;
+        weatherInfo.innerHTML = `
+          Suhu: ${data.temperature} °C<br>
+          Kelembaban: ${data.humidity}%<br>
+          Cuaca: ${data.condition}<br>
+          Waktu Update: ${data.updated}
+        `;
 
-  result.innerHTML = `
-    <p><strong>City:</strong> ${data.location}</p>
-    <p><strong>Province:</strong> ${data.province}</p>
-    <p><strong>Weather:</strong> ${data.weather}</p>
-    <p><strong>Temperature:</strong> ${data.temperature} °C</p>
-    <p><strong>Time:</strong> ${data.datetime}</p>
-  `;
+        card.style.display = 'block';
+      } catch (error) {
+        alert("Gagal memuat data cuaca. Periksa koneksi atau backend.");
+        console.error(error);
+      } finally {
+        loading.style.display = 'none';
+      }
 }
