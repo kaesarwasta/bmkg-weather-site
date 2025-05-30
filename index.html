@@ -3,96 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BMKG Weather Forecast</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #83a4d4, #b6fbff);
-      color: #333;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .card {
-      background-color: white;
-      border-radius: 16px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      padding: 20px;
-      margin: 20px auto;
-      max-width: 400px;
-    }
-
-    .weather {
-      font-size: 1.2rem;
-      margin-top: 10px;
-    }
-
-    select, button {
-      padding: 10px;
-      font-size: 1rem;
-      margin-top: 10px;
-    }
-
-    .loader {
-      display: none;
-      font-size: 1.1rem;
-      color: #555;
-    }
-  </style>
+  <title>BMKG Weather App</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Cuaca Hari Ini (BMKG)</h1>
+  <div class="weather-container">
+    <div class="top-section">
+      <img src="https://img.icons8.com/emoji/96/rain-cloud.png" alt="Weather Icon" class="weather-icon"/>
+      <h1 class="temperature">19°</h1>
+      <p class="description">Precipitations</p>
+      <p class="temp-range">Max: 24° Min: 18°</p>
+      <img src="https://img.icons8.com/color/96/house.png" alt="House" class="house-icon"/>
+    </div>
 
-  <div>
-    <select id="citySelector">
-      <option value="Jakarta">Jakarta</option>
-      <option value="Bandung">Bandung</option>
-      <option value="Surabaya">Surabaya</option>
-      <!-- Add more city options if your backend supports them -->
-    </select>
-    <button onclick="getWeather()">Lihat Cuaca</button>
+    <div class="forecast-section">
+      <div class="forecast-header">
+        <span>Today</span>
+        <span>July, 21</span>
+      </div>
+      <div class="forecast-row">
+        <div class="forecast-card">
+          <p>19°C</p>
+          <img src="https://img.icons8.com/emoji/48/rain-cloud.png" alt="Rain" />
+          <p>15.00</p>
+        </div>
+        <div class="forecast-card">
+          <p>18°C</p>
+          <img src="https://img.icons8.com/emoji/48/cloud-with-rain.png" alt="Rain" />
+          <p>16.00</p>
+        </div>
+        <div class="forecast-card">
+          <p>18°C</p>
+          <img src="https://img.icons8.com/emoji/48/cloud-with-rain.png" alt="Rain" />
+          <p>17.00</p>
+        </div>
+        <div class="forecast-card">
+          <p>18°C</p>
+          <img src="https://img.icons8.com/emoji/48/cloud-with-rain.png" alt="Rain" />
+          <p>18.00</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-nav">
+      <button class="nav-button">📍</button>
+      <button class="nav-button add">＋</button>
+      <button class="nav-button">≡</button>
+    </div>
   </div>
-
-  <p class="loader" id="loading">Memuat data cuaca...</p>
-
-  <div class="card" id="weatherCard" style="display: none;">
-    <h2 id="cityName"></h2>
-    <div class="weather" id="weatherInfo"></div>
-  </div>
-
-  <script>
-    async function getWeather() {
-      const city = document.getElementById('citySelector').value;
-      const loading = document.getElementById('loading');
-      const card = document.getElementById('weatherCard');
-      const cityName = document.getElementById('cityName');
-      const weatherInfo = document.getElementById('weatherInfo');
-
-      loading.style.display = 'block';
-      card.style.display = 'none';
-
-      try {
-        const response = await fetch(`https://your-flask-backend-url.com/api/weather?city=${city}`);
-        const data = await response.json();
-
-        cityName.textContent = city;
-        weatherInfo.innerHTML = `
-          Suhu: ${data.temperature} °C<br>
-          Kelembaban: ${data.humidity}%<br>
-          Cuaca: ${data.condition}<br>
-          Waktu Update: ${data.updated}
-        `;
-
-        card.style.display = 'block';
-      } catch (error) {
-        alert("Gagal memuat data cuaca. Periksa koneksi atau backend.");
-        console.error(error);
-      } finally {
-        loading.style.display = 'none';
-      }
-    }
-  </script>
 </body>
 </html>
-
-
