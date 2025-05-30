@@ -4,6 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BMKG Weather Forecast</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #83a4d4, #b6fbff);
+      color: #333;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 400px;
+    }
+
+    .weather {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    select, button {
+      padding: 10px;
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+
+    .loader {
+      display: none;
+      font-size: 1.1rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
   <h1>Cuaca Hari Ini (BMKG)</h1>
 
   <div>
@@ -23,37 +60,6 @@
     <div class="weather" id="weatherInfo"></div>
   </div>
 
-  <script>
-    async function getWeather() {
-      const city = document.getElementById('citySelector').value;
-      const loading = document.getElementById('loading');
-      const card = document.getElementById('weatherCard');
-      const cityName = document.getElementById('cityName');
-      const weatherInfo = document.getElementById('weatherInfo');
-
-      loading.style.display = 'block';
-      card.style.display = 'none';
-
-      try {
-        const response = await fetch(`https://your-flask-backend-url.com/api/weather?city=${city}`);
-        const data = await response.json();
-
-        cityName.textContent = city;
-        weatherInfo.innerHTML = `
-          Suhu: ${data.temperature} °C<br>
-          Kelembaban: ${data.humidity}%<br>
-          Cuaca: ${data.condition}<br>
-          Waktu Update: ${data.updated}
-        `;
-
-        card.style.display = 'block';
-      } catch (error) {
-        alert("Gagal memuat data cuaca. Periksa koneksi atau backend.");
-        console.error(error);
-      } finally {
-        loading.style.display = 'none';
-      }
-    }
-  </script>
+ 
 </body>
 </html>
