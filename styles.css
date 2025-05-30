@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom right, #654ea3, #eaafc8);
+  color: white;
+}
+
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
+  max-width: 430px;
+  margin: auto;
+}
+
+.top-section {
+  text-align: center;
+}
+
+.weather-icon {
+  width: 80px;
+}
+
+.temperature {
+  font-size: 64px;
+  margin: 10px 0;
+}
+
+.description {
+  font-size: 20px;
+  margin: 0;
+}
+
+.temp-range {
+  font-size: 16px;
+  margin: 5px 0 15px;
+}
+
+.house-icon {
+  width: 120px;
+  margin-top: 10px;
+}
+
+.forecast-section {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 15px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.forecast-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.forecast-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.forecast-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  flex: 1;
+  margin: 0 5px;
+}
+
+.forecast-card img {
+  width: 40px;
+}
+
+.bottom-nav {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav-button {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 12px;
+  font-size: 20px;
+  color: white;
+  border-radius: 50%;
+  flex: 1;
+  margin: 0 10px;
+}
+
+.nav-button.add {
+  font-size: 28px;
+}
