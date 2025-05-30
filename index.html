@@ -1,31 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>BMKG Weather</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BMKG Weather Forecast</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #83a4d4, #b6fbff);
+      color: #333;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 400px;
+    }
+
+    .weather {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    select, button {
+      padding: 10px;
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+
+    .loader {
+      display: none;
+      font-size: 1.1rem;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>BMKG Weather</h1>
-    <label>Province:
-      <select id="province">
-        <option>Jawa Barat</option>
-        <option>Jawa Tengah</option>
-        <option>Jawa Timur</option>
-        <option>DKI Jakarta</option>
-      </select>
-    </label>
+  <h1>Cuaca Hari Ini (BMKG)</h1>
 
-    <label>City:
-      <input type="text" id="cityInput" placeholder="e.g. Bandung" />
-    </label>
-
-    <button onclick="getWeather()">Check Weather</button>
-
-    <div id="result"></div>
+  <div>
+    <select id="citySelector">
+      <option value="Jakarta">Jakarta</option>
+      <option value="Bandung">Bandung</option>
+      <option value="Surabaya">Surabaya</option>
+      <!-- Add more city options if your backend supports them -->
+    </select>
+    <button onclick="getWeather()">Lihat Cuaca</button>
   </div>
 
-  <script src="script.js"></script>
+  <p class="loader" id="loading">Memuat data cuaca...</p>
+
+  <div class="card" id="weatherCard" style="display: none;">
+    <h2 id="cityName"></h2>
+    <div class="weather" id="weatherInfo"></div>
+  </div>
+
+  <script>
+    async function getWeather() {
+      const city = document.getElementById('citySelector').value;
+      const loading = document.getElementById('loading');
+      const card = document.getElementById('weatherCard');
+      const cityName = document.getElementById('cityName');
+      const weatherInfo = document.getElementById('weatherInfo');
+
+      loading.style.display = 'block';
+      card.style.display = 'none';
+
+      try {
+        const response = await fetch(`https://your-flask-backend-url.com/api/weather?city=${city}`);
+        const data = await response.json();
+
+        cityName.textContent = city;
+        weatherInfo.innerHTML = `
+          Suhu: ${data.temperature} °C<br>
+          Kelembaban: ${data.humidity}%<br>
+          Cuaca: ${data.condition}<br>
+          Waktu Update: ${data.updated}
+        `;
+
+        card.style.display = 'block';
+      } catch (error) {
+        alert("Gagal memuat data cuaca. Periksa koneksi atau backend.");
+        console.error(error);
+      } finally {
+        loading.style.display = 'none';
+      }
+    }
+  </script>
 </body>
 </html>
