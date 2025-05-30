@@ -1,11 +1,10 @@
-<!-- forecast.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pemberitahuan</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="forecast.css">
 </head>
 <body>
   <header class="navbar">
@@ -13,9 +12,9 @@
       <h1 class="logo">Kaesar - Weather</h1>
       <nav>
         <a href="index.html">Rumah</a>
-        <a href="forecast.html" class="active">Pembertahuan</a>
+        <a href="forecast.html" class="active">Pemberitahuan</a>
         <a href="cities.html">Kota</a>
-        <a href="settings.html">{engaturan</a>
+        <a href="settings.html">Pengaturan</a>
       </nav>
     </div>
   </header>
@@ -27,8 +26,32 @@
         <div class="card">Senin – ☀️ 30°C</div>
         <div class="card">Selasa – 🌧️ 27°C</div>
         <div class="card">Rabu – ⛅ 28°C</div>
-        <div class="card">Kamis – 🌦️ 26°C</div>
+        <div class="card">Kamis – ⛆ 26°C</div>
         <div class="card">Jumat – ☀️ 31°C</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="air-quality">
+    <div class="container">
+      <h3>Pemantauan Kualitas Udara</h3>
+      <div class="charts">
+        <div class="chart">
+          <h4>Suhu</h4>
+          <p class="value">30°C</p>
+        </div>
+        <div class="chart">
+          <h4>Kelembapan</h4>
+          <p class="value">65%</p>
+        </div>
+        <div class="chart">
+          <h4>Polusi Udara (PM2.5)</h4>
+          <p class="value">42 μg/m³</p>
+        </div>
+        <div class="chart">
+          <h4>Indeks Kualitas Udara</h4>
+          <p class="value good">Baik</p>
+        </div>
       </div>
     </div>
   </section>
@@ -40,4 +63,3 @@
   </footer>
 </body>
 </html>
-
